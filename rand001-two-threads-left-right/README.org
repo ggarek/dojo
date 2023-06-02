@@ -1,0 +1,3 @@
+Implement a two-thread robot that walks making steps
+left-right-left-right etc.  The robot should start with L(eft) step
+and continue on interchanging steps in order.
