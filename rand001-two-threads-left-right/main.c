@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-// create shared mutex
-// create shared signal
-// create shared step variable
-// write step function
-// start two threads with L and R
-
 static void* thread_step(void *arg);
 void die(int notzero, char* message);
 
@@ -16,8 +10,6 @@ static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 static current_step = 1; // 1 is Left, 2 is Right
 
 int main() {
-  printf("hello\n");
-
   pthread_t t1;
   pthread_t t2;
   int s;
@@ -27,7 +19,6 @@ int main() {
  
   s = pthread_create(&t2, NULL, thread_step, (void*)2);
   die(s, "pthread_create");
-
 
   s = pthread_join(t1, NULL);
   die(s, "pthread_join"); 
